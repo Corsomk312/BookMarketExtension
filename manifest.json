@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Getting an input form on an extension",
+  "description": "This extension shows a log-in form and will eventually send that information",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["application.js"]
+    }
+  ],
+
+  "background": {
+    "persistent": true,
+    "scripts": ["jquery.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "favicon_copy.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "http://localhost:3000/",
+    "https://ajax.googleapis.com/",
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+  ]
+}
